@@ -1,2 +1,2 @@
 # JATE
-JATE
+This browser-based text editor operates as a single-page application, aligning with PWA criteria. It incorporates multiple data persistence techniques, providing redundancy in case a browser does not support a particular option. The application is deployed on Heroku and also functions offline.

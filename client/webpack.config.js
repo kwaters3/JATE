@@ -17,7 +17,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Client Server',
+        title: 'Webpack Output',
         template: './index.html',
       }),
       new InjectManifest({
@@ -30,8 +30,8 @@ module.exports = () => {
         fingerprints: false,
         inject: true,
         name: 'Just Another Text Editor',
-        short_name: 'J.A.T.E.',
-        description: 'A simple text editor',
+        short_name: 'J-A-T-E.',
+        description: 'A text document editor that saves to your browser.',
         background_color: '#225ca3',
         theme_color: '#225ca3',
         start_url: './',
@@ -54,7 +54,7 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
-          // We use babel-loader in order to use ES6.
+          // use babel-loader for ES6
           use: {
             loader: 'babel-loader',
             options: {

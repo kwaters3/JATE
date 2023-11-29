@@ -19,7 +19,7 @@ This browser-based text editor operates as a single-page application, aligning w
 
 #### Click on the image below to reveal the deployed website:
 
-[![Screenshot](./assets/images/initial.png)](https://just-another-text-editor-23.onrender.com/)
+[![Screenshot](./Assets/screenshot.png)](https://just-another-text-editor-23.onrender.com/)
 
 
 

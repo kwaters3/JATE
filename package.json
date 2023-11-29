@@ -19,7 +19,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "if-env": "^1.0.4"
+    "ib": "^0.2.9",
+    "idb": "^7.1.1",
+    "if-env": "^1.0.4",
+    "indexdb": "^0.0.0"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",

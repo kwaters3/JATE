@@ -2,4 +2,4 @@
 Assets/
 node_modules/
 .vscode/
-.env
+.envnode_modules

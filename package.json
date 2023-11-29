@@ -1,15 +1,12 @@
 {
-  "name": "JATE",
+  "name": "jate",
   "version": "1.0.0",
-  "engines": {
-    "node": "20.6.0"
-  },
   "description": "",
-  "main": "./server/server.js",
+  "main": "server.js",
   "scripts": {
-    "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run dev\"",
     "start": "npm run build && cd server && node server.js",
-    "server": "cd server server.js --ignore client",
+    "server": "cd server nodemon server.js --ignore client",
     "build": "cd client && npm run build",
     "install": "cd server && npm i && cd ../client && npm i",
     "client": "cd client && npm start"
@@ -19,10 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "ib": "^0.2.9",
-    "idb": "^7.1.1",
-    "if-env": "^1.0.4",
-    "indexdb": "^0.0.0"
+    "if-env": "^1.0.4"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",

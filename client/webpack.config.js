@@ -3,8 +3,6 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
 
 module.exports = () => {
   return {
@@ -19,43 +17,44 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Just Another Text Editor',
+        title: 'Client Server',
         template: './index.html',
       }),
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
+
+      // Creates a manifest.json file.
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
         name: 'Just Another Text Editor',
-        short_name: 'JATE',
+        short_name: 'J.A.T.E.',
         description: 'A simple text editor',
         background_color: '#225ca3',
         theme_color: '#225ca3',
-        start_url: '/',
-        publicPath: '/',
+        start_url: './',
+        publicPath: './',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('images', 'logo'),
+            destination: path.join('assets', 'icons'),
           },
         ],
       }),
     ],
-
     module: {
       rules: [
         {
-          test: /\.css$/i,
+          test: /\.css$/,
           use: ['style-loader', 'css-loader'],
         },
-
         {
-          test: /\.js$/,
+          test: /\.m?js$/,
           exclude: /node_modules/,
+          // We use babel-loader in order to use ES6.
           use: {
             loader: 'babel-loader',
             options: {
@@ -63,7 +62,7 @@ module.exports = () => {
               plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
-        },      
+        },
       ],
     },
   };
